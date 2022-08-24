@@ -28,7 +28,7 @@
                     <h1 class="title">What’s your fullname?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <input type="text" id="ans" class="input" data-input="fullname" placeholder="First and last name" required/>
+                            <input v-model="data.fullname" type="text" id="ans" class="input" data-input="fullname" placeholder="First and last name" required/>
                         </label>
                     </div>
                     <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -38,7 +38,9 @@
                     <h1 class="title">What’s your occupation?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="occupation" data-autofill="occupation" class="input" required>
+                            <selectv-model="data.occupation"  data-input="occupation" data-autofill="occupation" class="input" required>
+                                <option value="software-engineer">Software Engineer</option>
+                                <option value="lecturer">Lecturer</option>
                             </select>
                         </label>
                     </div>
@@ -49,7 +51,7 @@
                     <h1 class="title">What’s your gender?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="sex" class="input" required>
+                            <select v-model="data.sex" data-input="sex" class="input" required>
                                 <option value="">Please Choose</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -73,21 +75,12 @@
                     <h1 class="title">Add your profile picture</h1>
                     <div class="input-area">
                         <label for="picture">
-                            <input type="file" id="picture" class="input" data-input="picture" required/>
+                            <input v-model="data.picture" type="file" id="picture" class="input" data-input="picture" required/>
                         </label>
                     </div>
                     <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
                 </section>
 
-                <!-- <section class="content-wrapper">
-                    <h1 class="title">Add your display picture</h1>
-                    <div class="input-area">
-                        <label for="picture">
-                            <input type="file" id="picture" class="input" data-input="picture" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="finish" class="btn">Finish</a>
-                </section> -->
 
                 <section class="content-wrapper" data-starter="yes">
                     <h1 class="title">What are your living preferences</h1>
@@ -99,7 +92,7 @@
                     <h1 class="title">What type of house do you need?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="house_type" data-autofill="house_type" class="input" required>
+                            <select v-model="data.house_type" data-input="house_type" data-autofill="house_type" class="input" required>
                                 
                             </select>
                         </label>
@@ -111,7 +104,7 @@
                     <h1 class="title">Type of worker?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="type_of_worker" data-autofill="type_of_worker" class="input" required>
+                            <select v-model="data.type_of_worker" data-input="type_of_worker" data-autofill="type_of_worker" class="input" required>
                             </select>
                         </label>
                     </div>
@@ -122,7 +115,7 @@
                     <h1 class="title">What gender would you prefer?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="gender_to_stay_with" class="input" required>
+                            <select v-model="data.gender_to_stay_with" data-input="gender_to_stay_with" class="input" required>
                                 <option value="">Please Choose</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -137,7 +130,7 @@
                     <h1 class="title">How urgently do you need it?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="urgency" data-autofill="urgency" class="input" required>
+                            <select v-model="data.urgency" data-input="urgency" data-autofill="urgency" class="input" required>
                                 
                             </select>
                         </label>
@@ -149,7 +142,7 @@
                     <h1 class="title">What's your budget (inclusive of agency)</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="budget" data-autofill="budget" class="input" required>
+                            <select v-model="data.budget" data-input="budget" data-autofill="budget" class="input" required>
                             </select>
                         </label>
                     </div>
@@ -160,7 +153,7 @@
                     <h1 class="title">Do you have your money ready?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="money_ready" data-autofill="money_ready" class="input" required>
+                            <select v-model="data.money_ready" data-input="money_ready" data-autofill="money_ready" class="input" required>
                             </select>
                         </label>
                     </div>
@@ -171,7 +164,7 @@
                     <h1 class="title">Are you open to mixed living arrangements?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select data-input="mix_living" class="input" data-autofill="mix_living" required>
+                            <select v-model="data.mix_living" data-input="mix_living" class="input" data-autofill="mix_living" required>
                             </select>
                         </label>
                     </div>
@@ -182,7 +175,7 @@
                     <h1 class="title">What’s your maximum number of house mates?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <input type="tel" value="1" id="ans" class="input" data-input="house_mates" placeholder="Please specity" required/>
+                            <input v-model="data.house_mates" type="tel" value="1" id="ans" class="input" data-input="house_mates" placeholder="Please specity" required/>
                         </label>
                     </div>
                     <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -198,7 +191,7 @@
                     <h1 class="title">What’s your email?</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <input type="email" id="ans" class="input" data-input="email" placeholder="We need to contact you with it" required/>
+                            <input v-model="data.email" type="email" id="ans" class="input" data-input="email" placeholder="We need to contact you with it" required/>
                         </label>
                     </div>
                     <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -208,7 +201,7 @@
                     <h1 class="title">Create your secure password</h1>
                     <div class="input-area">
                         <label for="password">
-                            <input type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
+                            <input v-model="data.password" type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
                         </label>
                     </div>
                     <a href="javascript:void(0)" data-nav="finish" class="btn">Finish</a>
@@ -244,7 +237,9 @@ export default {
         useMeta({
             title: 'Home',
         })
-        return {}
+        return {
+            data: {}
+        }
     },
     data() {
         return {}
