@@ -1,0 +1,259 @@
+<template>
+    <section class="theme-1">
+        <section class="wrapper">
+            
+            <header class="content-header">
+
+                <aside class="left-nav">
+                    <a class="arrow-left" href="javascript:void(0)">
+                        <img src="/img/arrow-left.svg"/>
+                        <span class="arrow-left-text">Home</span>
+                    </a>
+                </aside>
+
+                <aside class="right-tracker">
+                </aside>
+
+            </header>
+
+            <main class="main-content">
+
+                <section class="content-wrapper active" data-starter="yes">
+                    <h1 class="title">Tell us a bit about you</h1>
+                    <p class="desc">Welcome to Millennial Living, we will plug you directly to property managers, we would match your budget and find you someone willing to share rent and utility costs. All you need to do is be willing to share.</p>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Get started</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What’s your fullname?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <input type="text" id="ans" class="input" data-input="fullname" placeholder="First and last name" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What’s your occupation?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="occupation" data-autofill="occupation" class="input" required>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What’s your gender?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="sex" class="input" required>
+                                <option value="">Please Choose</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+                
+                <section class="content-wrapper">
+                    <h1 class="title">How old are you?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <input type="text" id="ans" class="input" data-input="age" placeholder="eg. 20" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">Add your profile picture</h1>
+                    <div class="input-area">
+                        <label for="picture">
+                            <input type="file" id="picture" class="input" data-input="picture" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <!-- <section class="content-wrapper">
+                    <h1 class="title">Add your display picture</h1>
+                    <div class="input-area">
+                        <label for="picture">
+                            <input type="file" id="picture" class="input" data-input="picture" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="finish" class="btn">Finish</a>
+                </section> -->
+
+                <section class="content-wrapper" data-starter="yes">
+                    <h1 class="title">What are your living preferences</h1>
+                    <p class="desc">In this section we would like to know your preferred location, number of house mates you will allow and some other living preferences custom to you.</p>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Get started</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What type of house do you need?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="house_type" data-autofill="house_type" class="input" required>
+                                
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">Type of worker?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="type_of_worker" data-autofill="type_of_worker" class="input" required>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What gender would you prefer?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="gender_to_stay_with" class="input" required>
+                                <option value="">Please Choose</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="any">Any</option>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">How urgently do you need it?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="urgency" data-autofill="urgency" class="input" required>
+                                
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What's your budget (inclusive of agency)</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="budget" data-autofill="budget" class="input" required>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">Do you have your money ready?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="money_ready" data-autofill="money_ready" class="input" required>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">Are you open to mixed living arrangements?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <select data-input="mix_living" class="input" data-autofill="mix_living" required>
+                            </select>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What’s your maximum number of house mates?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <input type="tel" value="1" id="ans" class="input" data-input="house_mates" placeholder="Please specity" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper" data-starter="yes">
+                    <h1 class="title">Let's provision an account for you</h1>
+                    <p class="desc">In this section we would like to take your email address, preferred password, and picture photograph to better know you.</p>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Get started</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">What’s your email?</h1>
+                    <div class="input-area">
+                        <label for="ans">
+                            <input type="email" id="ans" class="input" data-input="email" placeholder="We need to contact you with it" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                </section>
+
+                <section class="content-wrapper">
+                    <h1 class="title">Create your secure password</h1>
+                    <div class="input-area">
+                        <label for="password">
+                            <input type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" data-nav="finish" class="btn">Finish</a>
+                </section>
+
+            </main>
+
+            <footer class="content-progress">
+                <div class="range">
+                    <div class="range-inner" style="width: 0%;"></div>
+                </div>
+            </footer>
+
+        </section>
+    </section>
+
+</template>
+
+<route lang="yaml">
+    meta:
+        layout: default
+        middleware: []
+        requiresAuth: false
+</route>
+
+<script>
+import { useMeta } from 'vue-meta'
+import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { mapActions, useStore, mapGetters, mapState, mapMutations } from "vuex";
+export default {
+    setup() {
+        useMeta({
+            title: 'Home',
+        })
+        return {}
+    },
+    data() {
+        return {}
+    },
+    computed: {},
+    mounted() {},
+    methods: {}
+}
+
+</script>
+<style>
+</style>
