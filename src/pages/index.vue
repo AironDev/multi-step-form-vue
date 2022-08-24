@@ -25,186 +25,16 @@
                 </section>
 
                 <section class="content-wrapper">
-                    <h1 class="title">What’s your fullname?</h1>
+                    <h1 class="title">Acount Type</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <input v-model="data.fullname" type="text" id="ans" class="input" data-input="fullname" placeholder="First and last name" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What’s your occupation?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <selectv-model="data.occupation"  data-input="occupation" data-autofill="occupation" class="input" required>
-                                <option value="software-engineer">Software Engineer</option>
-                                <option value="lecturer">Lecturer</option>
+                            <select v-model="data.type"  data-input="occupation" data-autofill="occupation" class="input" required>
+                                <option value="person">Person</option>
+                                <option value="company">Company</option>
                             </select>
                         </label>
                     </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What’s your gender?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.sex" data-input="sex" class="input" required>
-                                <option value="">Please Choose</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-                
-                <section class="content-wrapper">
-                    <h1 class="title">How old are you?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <input type="text" id="ans" class="input" data-input="age" placeholder="eg. 20" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">Add your profile picture</h1>
-                    <div class="input-area">
-                        <label for="picture">
-                            <input v-model="data.picture" type="file" id="picture" class="input" data-input="picture" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-
-                <section class="content-wrapper" data-starter="yes">
-                    <h1 class="title">What are your living preferences</h1>
-                    <p class="desc">In this section we would like to know your preferred location, number of house mates you will allow and some other living preferences custom to you.</p>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Get started</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What type of house do you need?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.house_type" data-input="house_type" data-autofill="house_type" class="input" required>
-                                
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">Type of worker?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.type_of_worker" data-input="type_of_worker" data-autofill="type_of_worker" class="input" required>
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What gender would you prefer?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.gender_to_stay_with" data-input="gender_to_stay_with" class="input" required>
-                                <option value="">Please Choose</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="any">Any</option>
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">How urgently do you need it?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.urgency" data-input="urgency" data-autofill="urgency" class="input" required>
-                                
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What's your budget (inclusive of agency)</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.budget" data-input="budget" data-autofill="budget" class="input" required>
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">Do you have your money ready?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.money_ready" data-input="money_ready" data-autofill="money_ready" class="input" required>
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">Are you open to mixed living arrangements?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <select v-model="data.mix_living" data-input="mix_living" class="input" data-autofill="mix_living" required>
-                            </select>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What’s your maximum number of house mates?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <input v-model="data.house_mates" type="tel" value="1" id="ans" class="input" data-input="house_mates" placeholder="Please specity" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper" data-starter="yes">
-                    <h1 class="title">Let's provision an account for you</h1>
-                    <p class="desc">In this section we would like to take your email address, preferred password, and picture photograph to better know you.</p>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Get started</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">What’s your email?</h1>
-                    <div class="input-area">
-                        <label for="ans">
-                            <input v-model="data.email" type="email" id="ans" class="input" data-input="email" placeholder="We need to contact you with it" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                </section>
-
-                <section class="content-wrapper">
-                    <h1 class="title">Create your secure password</h1>
-                    <div class="input-area">
-                        <label for="password">
-                            <input v-model="data.password" type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
-                        </label>
-                    </div>
-                    <a href="javascript:void(0)" data-nav="finish" class="btn">Finish</a>
+                    <a href="javascript:void(0)" @click="start()" data-nav="next" class="btn">Next</a>
                 </section>
 
             </main>
@@ -246,7 +76,15 @@ export default {
     },
     computed: {},
     mounted() {},
-    methods: {}
+    methods: {
+        start(){
+           if(this.data.type == 'person'){
+                this.$router.push('person')
+           }else{
+                this.$router.push('company')
+           }
+        }
+    }
 }
 
 </script>
