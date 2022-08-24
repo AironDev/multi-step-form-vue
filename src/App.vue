@@ -10,7 +10,7 @@
 
 <script setup>
 import { useMeta } from 'vue-meta'
-const siteName = 'REMIT NG'
+const siteName = 'REG'
 useMeta({
     title: '',
     htmlAttrs: { lang: 'en', amp: true },
