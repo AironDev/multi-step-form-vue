@@ -20,16 +20,17 @@
 
                 <section class="content-wrapper active" data-starter="yes">
                     <h1 class="title">Tell us a bit about you</h1>
-                    <p class="desc">Welcome to Millennial Living, we will plug you directly to property managers, we would match your budget and find you someone willing to share rent and utility costs. All you need to do is be willing to share.</p>
+                    <p class="desc">Welcome to Peculiar HMS, Before we proceed lets create your Identity.</p>
                     <a href="javascript:void(0)" data-nav="next" class="btn">Get started</a>
                 </section>
 
                 <section class="content-wrapper">
-                    <h1 class="title">Acount Type</h1>
+                    <h1 class="title">Account Type</h1>
                     <div class="input-area">
                         <label for="ans">
-                            <select v-model="data.type"  data-input="occupation" data-autofill="occupation" class="input" required>
-                                <option value="person">Person</option>
+                            <!--<h4 class="title">Vendor's Category</h4>-->
+                            <select v-model="data.type" placeholder="Vendor's Category"  data-input="occupation" data-autofill="occupation" class="input" required>
+                                <option value="person">Individual</option>
                                 <option value="company">Company</option>
                             </select>
                         </label>

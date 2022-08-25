@@ -21,50 +21,98 @@
                 <section class="content-wrapper active" data-starter="yes">
                     <h1 class="title">You are registering as an Individual</h1>
                     <p class="desc"></p>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Continue</a>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Continue => </a>
                 </section>
 
                 
 
-                <div v-if="data.type = 'company' ">
-                    <section class="content-wrapper">
-                        <h1 class="title">What’s your fullname?</h1>
+                <div v-if="data.type = 'individual' ">
+
+                <section class="content-wrapper">
+                        <h1 class="title">What's your FullName</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <input v-model="data.fullname" type="text" id="ans" class="input" data-input="fullname" placeholder="First and last name" required/>
+                                <input v-model="data.fullname" type="text" id="fullname" class="input" data-input="FullName" placeholder="FulName" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
                     </section>
 
                     <section class="content-wrapper">
-                        <h1 class="title">What’s your occupation?</h1>
+                        <h1 class="title">What gender would you prefer?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <select v-model="data.occupation"  data-input="occupation" data-autofill="occupation" class="input" required>
-                                    <option value="software-engineer">Software Engineer</option>
-                                    <option value="lecturer">Lecturer</option>
-                                </select>
-                            </label>
-                        </div>
-                        <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                    </section>
-
-                    <section class="content-wrapper">
-                        <h1 class="title">What’s your gender?</h1>
-                        <div class="input-area">
-                            <label for="ans">
-                                <select v-model="data.sex" data-input="sex" class="input" required>
+                                <select v-model="data.gender_to_stay_with" data-input="gender_to_stay_with" class="input" required>
                                     <option value="">Please Choose</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
+                                    <option value="any">Any</option>
                                 </select>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
                     </section>
-                    
+
                     <section class="content-wrapper">
+                        <h1 class="title">What's your Preferred Address?</h1>
+                        <div class="input-area">
+                            <label for="ans">
+                                <input v-model="data.address" type="text" id="address" class="input" data-input="Address" placeholder="Address" required/>
+                            </label>
+                        </div>
+                        <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                    </section>
+
+
+
+                    
+
+
+                    <section class="content-wrapper">
+                        <h1 class="title">What's your Phone Number?</h1>
+                        <div class="input-area">
+                            <label for="ans">
+                                <input v-model="data.phone" type="text" id="phone" class="input" data-input="Phone" placeholder="Phone" required/>
+                            </label>
+                        </div>
+                        <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                    </section>
+
+                    <section class="content-wrapper">
+                        <h1 class="title">What's your Email Address?</h1>
+                        <div class="input-area">
+                            <label for="ans">
+                               <input v-model="data.email" type="email" id="email" class="input" data-input="Email" placeholder="Email Address" required/>
+                              
+                            </label>
+                        </div>
+                        <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                    </section>
+
+                     <section class="content-wrapper">
+                        <h1 class="title">Create a New Password</h1>
+                        <div class="input-area">
+                            <label for="ans">
+                               <input v-model="data.password" type="password" id="password" class="input" data-input="Password" placeholder="New Password" required/>
+                              
+                            </label>
+                        </div>
+                        <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
+                    </section>
+
+                     <section class="content-wrapper">
+                        <h1 class="title">Confirm your New Password</h1>
+                        <div class="input-area">
+                            <label for="password">
+                                <input v-model="data.cpassword" type="password" id="cpassword" class="input" data-input="password" placeholder="Confirm new a password" required/>
+                            </label>
+                        </div>
+                        <a href="javascript:void(0)" @click="finish()" data-nav="finish" class="btn">Finish</a>
+                    </section>
+
+                   
+                    
+                    <!--<section class="content-wrapper">
                         <h1 class="title">How old are you?</h1>
                         <div class="input-area">
                             <label for="ans">
@@ -208,17 +256,9 @@
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
-                    </section>
+                    </section>-->
 
-                    <section class="content-wrapper">
-                        <h1 class="title">Create your secure password</h1>
-                        <div class="input-area">
-                            <label for="password">
-                                <input v-model="data.password" type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
-                            </label>
-                        </div>
-                        <a href="javascript:void(0)" @click="finish()" data-nav="finish" class="btn">Finish</a>
-                    </section>
+                   
                 </div>
 
                 <div v-else>
