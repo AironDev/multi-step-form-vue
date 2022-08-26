@@ -47,7 +47,7 @@ export default {
             nextTick(() => {
                 setTimeout(function() {
                     customScript()
-                    darkmodeScript()
+                    // darkmodeScript()
                 }, 1000)
             })
         })

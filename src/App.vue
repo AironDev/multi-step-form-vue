@@ -5,6 +5,8 @@
         </template>
     </metainfo>
     <router-view />
+    <NotificationComponent position="bottom-right"></NotificationComponent>
+
 
 </template>
 

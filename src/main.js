@@ -17,6 +17,7 @@ import Notifications from './plugins/notiwind/index.esm'
 
 
 
+
 const routes = setupLayouts(generatedRoutes)
 
 const router = createRouter({
@@ -25,7 +26,7 @@ const router = createRouter({
     linkActiveClass: "active"
 })
 
-const app = createApp(App).use(router).use(store).use(createMetaManager())
+const app = createApp(App).use(router).use(store).use(createMetaManager()).use(Notifications)
 
 // add config to vue instance - this.$config
 app.config.globalProperties.$config = config

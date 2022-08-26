@@ -30,7 +30,7 @@
                         <h1 class="title">Vendor's Company Name ?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <input v-model="data.cname" type="text" id="ans" class="input" data-input="cname" placeholder="Vendor's Company Name " required/>
+                                <input v-model="data.company.company_name" type="text" id="ans" class="input" data-input="cname" placeholder="Vendor's Company Name " required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -40,7 +40,7 @@
                         <h1 class="title">Vendor's Company Address?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                 <input v-model="data.caddress" type="text" id="ans" class="input" data-input="caddress" placeholder="Vendor's Company Address" required/>
+                                 <input v-model="data.company.company_address" type="text" id="ans" class="input" data-input="caddress" placeholder="Vendor's Company Address" required/>
     
                             </label>
                         </div>
@@ -51,7 +51,7 @@
                         <h1 class="title">Vendor's Company Phone Number?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                 <input v-model="data.cphone" type="text" id="ans" class="input" data-input="cphone" placeholder="Vendor's Company Phone Number" required/>
+                                 <input v-model="data.vendor_contact.phone" type="text" id="ans" class="input" data-input="cphone" placeholder="Vendor's Company Phone Number" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -61,7 +61,7 @@
                         <h1 class="title">Vendor's Company Email?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <input type="email" id="cemail" class="input" data-input="cemail" placeholder="Vendor's Company Email?" required/>
+                                <input v-model="data.vendor_contact.email" type="email" id="cemail" class="input" data-input="cemail" placeholder="Vendor's Company Email?" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -71,7 +71,7 @@
                         <h1 class="title">Create New secure password</h1>
                         <div class="input-area">
                             <label for="password">
-                                <input v-model="data.password" type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
+                                <input v-model="data.vendor_contact.password" type="password" id="password" class="input" data-input="password" placeholder="Enter a password" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)"  data-nav="next" class="btn">Confirm Password</a>
@@ -81,7 +81,7 @@
                         <h1 class="title">Confirm New secure password</h1>
                         <div class="input-area">
                             <label for="password">
-                                <input v-model="data.cpassword" type="password" id="cpassword" class="input" data-input="password" placeholder="Enter secure password" required/>
+                                <inputv v-model="data.vendor_contact.cpassord" type="password" id="cpassword" class="input" data-input="password" placeholder="Enter secure password" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" @click="finish()" data-nav="finish" class="btn">Finish</a>
@@ -255,13 +255,19 @@ import { useMeta } from 'vue-meta'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { mapActions, useStore, mapGetters, mapState, mapMutations } from "vuex";
+import { notify } from "~/plugins/notiwind/index.esm"
+
 export default {
     setup() {
         useMeta({
             title: 'Home',
         })
         return {
-            data: {}
+            data: {
+                individual: false,
+                company: {},
+                vendor_contact: {}
+            }
         }
     },
     data() {
@@ -270,8 +276,28 @@ export default {
     computed: {},
     mounted() {},
     methods: {
-        finish(){
+        ...mapActions('auth', ['register']),
+        async finish(){
             console.log(this.data)
+            let data = {
+                vendor_category: this.data,
+                vendor_contact: this.data.vendor_contact
+            }
+            await this.register(data).then(res =>{
+                notify({
+                  group: "success",
+                  title: 'Registration is successful',
+                  text: res.message
+                }, 8000)
+            })
+            .catch(err =>{
+                // notify({
+                //   group: "error",
+                //   title: 'Error occured',
+                //   text: err.response.data.message
+                // }, 8000)
+                // console.log(err)
+            })
         }
     }
 }
