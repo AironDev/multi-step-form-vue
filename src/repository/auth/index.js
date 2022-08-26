@@ -9,7 +9,13 @@ export default {
   },
   
   async register (data) {
-    return await request().post(`${config.baseUrl}/signup`, data)
+    const reqHeaders = {
+        'headers': {
+            'Access-Control-Allow-Headers': 'x-access-token',
+            'X-Access-Token': `${config.token}`,
+        }
+    }
+    return await request().post(`${config.baseUrl}/vendor/signup`, data, reqHeaders)
   },
 
   async user () {

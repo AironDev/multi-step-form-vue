@@ -19,7 +19,10 @@ export default function () {
     instance = axios.create({
       baseURL: `${config.baseUrl}`,
       headers: {
-        'Authorization': token,
+        'Access-Control-Allow-Headers': 'x-access-token',
+        'X-Access-Token': `${config.token}`,
+        'Content-Type': 'application/json',
+        // 'Authorization': token,
         // 'Access-Control-Allow-Origin' : '*',
         // 'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       }
@@ -54,7 +57,7 @@ export default function () {
       notify({
           group: "error",
           title: 'Error occured',
-          text: err.message
+          text: err.response.data.message
       }, 8000)
       return Promise.reject(err)
     }

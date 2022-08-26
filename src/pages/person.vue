@@ -21,7 +21,7 @@
                 <section class="content-wrapper active" data-starter="yes">
                     <h1 class="title">You are registering as an Individual</h1>
                     <p class="desc"></p>
-                    <a href="javascript:void(0)" data-nav="next" class="btn">Continue => </a>
+                    <a href="javascript:void(0)" data-nav="next" class="btn">Continue</a>
                 </section>
 
                 
@@ -32,7 +32,7 @@
                         <h1 class="title">What's your FullName</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <input v-model="data.fullname" type="text" id="fullname" class="input" data-input="FullName" placeholder="FulName" required/>
+                                <input v-model="data.individual.name" type="text" id="fullname" class="input" data-input="FullName" placeholder="FulName" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -42,7 +42,7 @@
                         <h1 class="title">What gender would you prefer?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <select v-model="data.gender_to_stay_with" data-input="gender_to_stay_with" class="input" required>
+                                <select v-model="data.individual.gender" data-input="gender_to_stay_with" class="input" required>
                                     <option value="">Please Choose</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -57,7 +57,7 @@
                         <h1 class="title">What's your Preferred Address?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <input v-model="data.address" type="text" id="address" class="input" data-input="Address" placeholder="Address" required/>
+                                <input v-model="data.individual.address" type="text" id="address" class="input" data-input="Address" placeholder="Address" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -72,7 +72,7 @@
                         <h1 class="title">What's your Phone Number?</h1>
                         <div class="input-area">
                             <label for="ans">
-                                <input v-model="data.phone" type="text" id="phone" class="input" data-input="Phone" placeholder="Phone" required/>
+                                <input v-model="data.vendor_contact.phone" type="text" id="phone" class="input" data-input="Phone" placeholder="Phone" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" data-nav="next" class="btn">Next</a>
@@ -82,7 +82,7 @@
                         <h1 class="title">What's your Email Address?</h1>
                         <div class="input-area">
                             <label for="ans">
-                               <input v-model="data.email" type="email" id="email" class="input" data-input="Email" placeholder="Email Address" required/>
+                               <input v-model="data.vendor_contact.email" type="email" id="email" class="input" data-input="Email" placeholder="Email Address" required/>
                               
                             </label>
                         </div>
@@ -93,7 +93,7 @@
                         <h1 class="title">Create a New Password</h1>
                         <div class="input-area">
                             <label for="ans">
-                               <input v-model="data.password" type="password" id="password" class="input" data-input="Password" placeholder="New Password" required/>
+                               <input v-model="data.vendor_contact.password" type="password" id="password" class="input" data-input="Password" placeholder="New Password" required/>
                               
                             </label>
                         </div>
@@ -104,7 +104,7 @@
                         <h1 class="title">Confirm your New Password</h1>
                         <div class="input-area">
                             <label for="password">
-                                <input v-model="data.cpassword" type="password" id="cpassword" class="input" data-input="password" placeholder="Confirm new a password" required/>
+                                <input v-model="data.vendor_contact.cpassword" type="password" id="cpassword" class="input" data-input="password" placeholder="Confirm new a password" required/>
                             </label>
                         </div>
                         <a href="javascript:void(0)" @click="finish()" data-nav="finish" class="btn">Finish</a>
@@ -290,13 +290,19 @@ import { useMeta } from 'vue-meta'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { mapActions, useStore, mapGetters, mapState, mapMutations } from "vuex";
+import { notify } from "~/plugins/notiwind/index.esm"
+
 export default {
     setup() {
         useMeta({
             title: 'Home',
         })
         return {
-            data: {}
+            data: {
+                company: false,
+                individual: {},
+                vendor_contact: {}
+            }
         }
     },
     data() {
@@ -305,8 +311,28 @@ export default {
     computed: {},
     mounted() {},
     methods: {
-        finish(){
+        ...mapActions('auth', ['register']),
+        async finish(){
             console.log(this.data)
+            let data = {
+                vendor_category: this.data,
+                vendor_contact: this.data.vendor_contact
+            }
+            await this.register(data).then(res =>{
+                notify({
+                  group: "success",
+                  title: 'Registration is successful',
+                  text: res.message
+                }, 8000)
+            })
+            .catch(err =>{
+                // notify({
+                //   group: "error",
+                //   title: 'Error occured',
+                //   text: err.response.data.message
+                // }, 8000)
+                // console.log(err)
+            })
         }
     }
 }
